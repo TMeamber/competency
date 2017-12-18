@@ -19,4 +19,11 @@ massive(process.env.CONNECTION_STRING).then((db) => {
     app.set('db', db);
 })
 
+
+app.put('/api/comics', comics_contoller.updateComic)
+app.delete('/api/comics', comics_contoller.dleteComic)
+app.post('/api/comics', comics_contoller.addComic)
+app.get('/api/comics', comics_contoller.showComic)
+
+
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

@@ -17,9 +17,8 @@ getAll:(req, res, next) => {
 },
 update: (req, res, next) => {
     const dbInstance = req.app.get('db');
-    let {author, title, issue} = req.body;
     let {id} = req.params;
-    dbInstance.update_comic([Number(id), author, title, issue])
+    dbInstance.update_comic([Number(id),req.query.description])
     .then((comic) => res.status(200).send(comic))
     .catch((err)=> res.status(500).send(err))
 },
@@ -30,3 +29,4 @@ delete:(req, res, next) => {
     .catch((err) => res.status(500).send(err))
 }
 }
+// COMP 76C 76D 76E 76F

@@ -20,10 +20,10 @@ massive(process.env.CONNECTION_STRING).then((db) => {
 })
 
 
-app.put('/api/comics', comics_contoller.update) 
-app.delete('/api/comics/:id', comics_contoller.delete)
-app.post('/api/comics', comics_contoller.create)
-app.get('/api/comics/', comics_contoller.getAll)
+app.put('/api/comics/update/:id', comics_contoller.update) 
+app.delete('/api/comics/delete/:id', comics_contoller.delete)
+app.post('/api/comics/create', comics_contoller.create)
+app.get('/api/comics/get', comics_contoller.getAll)
 
 const PORT = 8080;
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

@@ -1,4 +1,6 @@
-modules.exports = {
+module.exports = {
+
+
     updateComic: (req, res, next) => {
         const dbInstance = req.app.get('db');
     
@@ -16,13 +18,13 @@ modules.exports = {
       addComic: (req, res, next) =>{
         const dbInstance = req.app.get('db');
         dbInstance.create_comic()
-        .then((product) => res.status(200).send())
+        .then(() => res.status(200).send())
       .catch((err) =>res.status(500).send());
       },
-      showCart: (req, res, next) =>{
+      showComics: (req, res, next) =>{
         const dbInstance = req.app.get('db');
         dbInstance.show_comic()
-        .then((cart) => res.status(200).send(cart))
+        .then(() => res.status(200).send())
         .catch((err) => res.status(500).send());
       }
 }

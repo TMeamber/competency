@@ -20,7 +20,7 @@ massive(process.env.CONNECTION_STRING).then((db) => {
 })
 
 
-app.put('/api/comics/update/:?', comics_contoller.update) 
+app.put('/api/comics/update', comics_contoller.update) 
 app.delete('/api/comics/delete/:id', comics_contoller.delete)
 app.post('/api/comics/create', comics_contoller.create)
 app.get('/api/comics/get', comics_contoller.getAll)  //COMP 74C 74D-1 74D-2 74D-3 74D-4

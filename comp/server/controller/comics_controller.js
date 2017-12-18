@@ -18,7 +18,7 @@ getAll:(req, res, next) => {
 update: (req, res, next) => {
     const dbInstance = req.app.get('db');
     let {id} = req.params;
-    dbInstance.update_comic([Number(id),req.query.description])
+    dbInstance.update_comic([Number(id),req.query.author])
     .then((comic) => res.status(200).send(comic))
     .catch((err)=> res.status(500).send(err))
 },

@@ -10,7 +10,7 @@ class Todo extends Component {
       super(props)
   
       this.state = {
-        text: ''
+        text: []
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleClick = this.handleClick.bind(this);
@@ -28,7 +28,7 @@ class Todo extends Component {
         text:''
       })
     }
-      // 44C 44D  44E some times you need to restart server for it to not break.
+      // 44C 44D  44E some times you need to restart server for it to not
     componentDidMount(){
       axios.get('/api/comics/get').then(res => {
         console.log(res.data)
@@ -36,6 +36,8 @@ class Todo extends Component {
     }
 
     render() {
+      console.log(this.state)
+      console.log(this.props)
       var todos = this.props.todos.map((todo, i) => {
         return <p key={i}>{todo}</p>
       })

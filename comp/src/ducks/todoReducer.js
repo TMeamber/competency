@@ -1,4 +1,4 @@
-const initialStaet = {
+const initialState = {
     todos: ['']
 }
 
@@ -11,7 +11,7 @@ export function createTodo(newTodo){
     }
 }
 
-export default function todoReducer(state = initialStaet, action) {
+export default function todoReducer(state = initialState, action) {
     switch(action.type){
         case CREATE_TODO:
         return Object.assign({}, state, {todos: [...state.todos, action.payload]})

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import{createTodo} from '../ducks/todoReducer'
-
+import axios from 'axios'
 
 // COMP 36D, 36D, 36E, 36F, 38G 36I 36J 37C
 
@@ -27,6 +27,12 @@ class Todo extends Component {
       this.setState({
         text:''
       })
+    }
+      // 44C 44D  44E some times you need to restart server for it to not break.
+    componentDidMount(){
+      axios.get('/api/comics/get').then(res => {
+        console.log(res.data)
+     })
     }
 
     render() {

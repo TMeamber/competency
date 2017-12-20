@@ -23,7 +23,7 @@ class Todo extends Component {
     }
     
     handleClick(){
-      createTodo(this.state.text)
+      this.props.createTodo(this.state.text)
       this.setState({
         text:''
       })

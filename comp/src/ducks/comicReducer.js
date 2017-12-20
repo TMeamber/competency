@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export function getComic(comics){
-    const getComic = axios.get('/api/comics').then(res => res.data)
+    const getComic = axios.get('/api/comics/get').then(res => res.data)
     return {
         type: GET_COMIC,
         payload: getComic
